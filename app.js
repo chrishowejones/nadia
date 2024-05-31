@@ -1,29 +1,27 @@
-var express = require("express");
-var path = require("path");
-var favicon = require("serve-favicon");
-var logger = require("morgan");
-var cookieParser = require("cookie-parser");
+const express = require("express");
+const path = require("path");
+const favicon = require("serve-favicon");
+const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 
-let index = require("./routes/index");
-let admin = require("./routes/admin");
-let reservations = require("./routes/reservations");
+const index = require("./routes/index");
+const admin = require("./routes/admin");
+const reservations = require("./routes/reservations");
 
 const auth = require("./lib/middleware/auth.js");
 
-const configuration = {};
-
-if (1) {
-}
-
-var app = express();
+const app = express();
 
 // Static assets.
 // Move this after the logger if you want to log requests for static assets.
 // Uncomment when you've added a favicon to your project.
+// eslint-disable-next-line no-undef
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+// eslint-disable-next-line no-undef
 app.use(express.static(path.join(__dirname, "public")));
 
 // view engine setup
+// eslint-disable-next-line no-undef
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
@@ -42,12 +40,13 @@ app.use("/reservations", reservations);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  var err = new Error("Not Found");
+  const err = new Error("Not Found");
   err.status = 404;
   next(err);
 });
 
 // error handler
+// eslint-disable-next-line no-unused-vars
 app.use(function (err, req, res, next) {
   // set locals, only providing error in test
   res.locals.message = err.message;

@@ -9,7 +9,7 @@ export default [
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: "commonjs",
-      globals: { node: true },
+      globals: { node: true, jest: true },
     },
     rules: {
       "no-empty": "error",

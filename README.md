@@ -35,6 +35,8 @@ This project uses https://www.npmjs.com/package/debug for development logging. T
 npm run debug
 ```
 
+This project uses eslint to find suspicious code in the source files. Visit [eslint site](https://eslint.org/) for details.
+
 ## FAQ
 
 - Q: Why didn't you store the time submitted?

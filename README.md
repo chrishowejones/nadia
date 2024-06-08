@@ -7,7 +7,7 @@ The backend contains intentional mistakes, like weak validation on email address
 ## Getting Started
 
 ```bash
-npm install --omit=dev
+npm install --include=dev
 npx knex migrate:latest --env=development
 npm start
 ```

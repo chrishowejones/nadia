@@ -5,7 +5,7 @@ import globals from "globals";
 
 export default [
   js.configs.recommended,
-  { ignores: ["public/contrib/*"] },
+  { ignores: ["public/contrib/*", "bin"] },
   {
     plugins: {
       jest,
@@ -16,14 +16,14 @@ export default [
       sourceType: "commonjs",
       globals: { node: true, jest: true, ...globals.jest },
     },
-    rules: { ...jest.configs.recommended.rule },
+    ...jest.configs["flat/recommended"],
   },
   {
     files: ["**/*.js"],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: "commonjs",
-      globals: { node: true, jest: true },
+      globals: { ...globals.node },
     },
     rules: {
       "no-empty": "error",
